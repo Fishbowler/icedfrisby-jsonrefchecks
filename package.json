@@ -1,0 +1,33 @@
+{
+  "name": "icedfrisby-jsonrefchecks",
+  "version": "0.1.0",
+  "description": "IcedFrisby plugin to check referential integrity between different sections of an API response",
+  "main": "expectJSONRefDataExists.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Fishbowler/icedfrisby-jsonrefchecks.git"
+  },
+  "keywords": [
+    "frisby",
+    "icedfrisby",
+    "json",
+    "referential",
+    "integrity"
+  ],
+  "author": "Dan Caseley",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "chai": "^4.1.0",
+    "jsonpath": "^0.2.12"
+  },
+  "devDependencies": {
+    "icedfrisby": "^1.2.0",
+    "mocha": "^3.5.0"
+  },
+  "peerDependencies": {
+    "icedfrisby": ">= 1.2.0"
+  }
+}
