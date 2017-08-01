@@ -5,7 +5,8 @@ const factory = superclass => class ExpectJSONRefDataExists extends superclass {
   expectJSONRefDataExists(candidatePattern, referencePattern) {
     const self = this;
     this.current.expects.push(function() {
-      var bodyJSON = JSON.parse(self.current.response.body);
+      const body = self.current.response.body;
+      var bodyJSON = (typeof body === "object") ? body : JSON.parse(body);
       var candidates = jsonpath.query(bodyJSON, candidatePattern);
       var references = jsonpath.query(bodyJSON, referencePattern);
       var matches = candidates.filter((candidate) => {

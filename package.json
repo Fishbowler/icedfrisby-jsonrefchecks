@@ -1,6 +1,6 @@
 {
   "name": "icedfrisby-jsonrefchecks",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "IcedFrisby plugin to check referential integrity between different sections of an API response",
   "main": "expectJSONRefDataExists.js",
   "scripts": {
