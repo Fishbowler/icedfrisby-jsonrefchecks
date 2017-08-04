@@ -1,10 +1,11 @@
 {
   "name": "icedfrisby-jsonrefchecks",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "IcedFrisby plugin to check referential integrity between different sections of an API response",
   "main": "expectJSONRefDataExists.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test:js": "mocha *.spec.js",
+    "test": "npm run test:js"
   },
   "repository": {
     "type": "git",
@@ -25,7 +26,9 @@
   },
   "devDependencies": {
     "icedfrisby": "^1.2.0",
-    "mocha": "^3.5.0"
+    "mixwith": "^0.1.1",
+    "mocha": "^3.5.0",
+    "sinon": "^3.0.0"
   },
   "peerDependencies": {
     "icedfrisby": ">= 1.2.0"
