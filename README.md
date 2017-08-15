@@ -5,6 +5,8 @@ IcedFrisby plugin to check referential integrity between different sections of a
 
 Pass two jsonpath specifications, a list of candidates (1) that must exist in the list of references (2)
 
+`.expectJSONRefDataExists(candidates, references, [options])`
+
 ## Purpose
 
 Where a JSON response to an API request contains internal references, you may wish to validate them.
@@ -58,6 +60,13 @@ frisby.create('Example Referential Integrity Check')
 ```
 
 This is a simple example containing only objects and arrays, but jsonpath supports lots of the features of XPath, and can query on a whole host of things, including data, existence of properties, those of parents/children, and combinations of all of them.
+
+## Options
+
+Options is an object that contain any of these properties:
+
+* `debug` - When true, print the count of results from the candidate and reference jsonpath queries. Default: false.
+* `failOnZeroCandidates` - When true, fail the check if the candidate jsonpath query returns 0 results. This is useful for development and where data should exist, since 100% of 0 candidates will always appear in the references set. Default: false.
 
 ## Further reading
 
