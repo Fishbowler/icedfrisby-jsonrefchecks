@@ -1,5 +1,6 @@
 const jsonpath = require('jsonpath');
 const chai = require('chai');
+const vsprintf = require('sprintf-js').vsprintf;
 
 const defaultConfig = {
   "debug": false,                 //Would print number of candidates and references
@@ -20,12 +21,13 @@ const factory = superclass => class ExpectJSONRefDataExists extends superclass {
         console.log('References: ' + references.length);
       }
       if(thisConfig.failOnZeroCandidates && candidates.length == 0){
-        chai.expect.fail("0 candidates","Some candidates","Query returned zero candidates")
+        chai.expect(candidates.length, 'Query returned zero candidates').to.be.greaterThan(0)
       } else {
         var matches = candidates.filter((candidate) => {
           return (references.includes(candidate));
         });
-        chai.expect(matches.length).to.equal(candidates.length);
+        const errorMsg = vsprintf('The pattern "%s" had %s items, but "%s" only contained %s of them',[candidatePattern, candidates.length, referencePattern, matches.length])
+        chai.expect(matches.length).to.equal(candidates.length, errorMsg);
       }
     });
     return this;
