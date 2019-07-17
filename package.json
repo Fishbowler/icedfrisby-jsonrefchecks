@@ -26,7 +26,7 @@
     "sprintf-js": "^1.1.1"
   },
   "devDependencies": {
-    "icedfrisby": "^1.2.0",
+    "icedfrisby": "^2.2.1",
     "mixwith": "^0.1.1",
     "mocha": "^3.5.0",
     "sinon": "^3.0.0"
