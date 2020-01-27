@@ -28,7 +28,7 @@
   "devDependencies": {
     "icedfrisby": "^1.2.0",
     "mixwith": "^0.1.1",
-    "mocha": "^3.5.0",
+    "mocha": "^7.0.1",
     "sinon": "^3.0.0"
   },
   "peerDependencies": {
